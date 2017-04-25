@@ -18,4 +18,12 @@ public class Enfermeiro extends Funcionario {
 	public void setNumCoren(int numCoren) {
 		this.numCoren = numCoren;
 	}
+
+	@Override
+	public String toString() {
+		return "Enfermeiro [numCoren=" + numCoren + ", id=" + id + ", salario=" + salario + ", dataInicio=" + dataInicio
+				+ ", ativo=" + ativo + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", sexo=" + sexo
+				+ ", dataNascimento=" + dataNascimento + "]";
+	}
+	
 }

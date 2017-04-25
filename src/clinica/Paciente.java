@@ -68,4 +68,13 @@ public class Paciente extends Pessoa {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
+
+	@Override
+	public String toString() {
+		return "Paciente [telefone=" + telefone + ", endereco=" + endereco + ", convenio=" + convenio + ", peso=" + peso
+				+ ", altura=" + altura + ", ativo=" + ativo + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg
+				+ ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + "]";
+	}
+	
+	
 }

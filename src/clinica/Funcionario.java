@@ -48,4 +48,12 @@ public class Funcionario extends Pessoa {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [id=" + id + ", salario=" + salario + ", dataInicio=" + dataInicio + ", ativo=" + ativo
+				+ ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", sexo=" + sexo + ", dataNascimento="
+				+ dataNascimento + "]";
+	}
+	
 }

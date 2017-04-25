@@ -28,4 +28,11 @@ public class Medico extends Funcionario {
 	public void setEspecializacao(String especializacao) {
 		this.especializacao = especializacao;
 	}
+
+	@Override
+	public String toString() {
+		return "Medico [numCrm=" + numCrm + ", especializacao=" + especializacao + ", id=" + id + ", salario=" + salario
+				+ ", dataInicio=" + dataInicio + ", ativo=" + ativo + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg
+				+ ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + "]";
+	}
 }

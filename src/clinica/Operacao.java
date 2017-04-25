@@ -10,6 +10,7 @@ public abstract class Operacao {
 	protected Funcionario responsavel;
 	
 	public Operacao(Date data, Sala sala, Paciente paciente, Funcionario responsavel) {
+		super();
 		this.data = data;
 		this.sala = sala;
 		this.paciente = paciente;

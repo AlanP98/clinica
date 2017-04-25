@@ -35,4 +35,11 @@ public class Convenio {
 	public void setMensalidade(double mensalidade) {
 		this.mensalidade = mensalidade;
 	}
+
+	@Override
+	public String toString() {
+		return "Convenio [nomeConvenio=" + nomeConvenio + ", tipoConvenio=" + tipoConvenio + ", mensalidade="
+				+ mensalidade + "]";
+	}
+	
 }

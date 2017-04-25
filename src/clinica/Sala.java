@@ -34,5 +34,11 @@ public class Sala {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	@Override
+	public String toString() {
+		return "Sala [andar=" + andar + ", numero=" + numero + ", descricao=" + descricao + "]";
 	}	
+	
 }

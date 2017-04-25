@@ -25,5 +25,11 @@ public class Medicamento {
 
 	public void setCompostos(String compostos) {
 		this.compostos = compostos;
+	}
+
+	@Override
+	public String toString() {
+		return "Medicamento [nome=" + nome + ", compostos=" + compostos + "]";
 	}	
+	
 }
