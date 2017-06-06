@@ -1,21 +1,25 @@
-package clinica;
+package clinica.model;
 
 import java.util.Date;
 
 public abstract class Pessoa {
 	
 	protected String nome;
-	protected int cpf;
+	protected String cpf;
 	protected int rg;
 	protected char sexo;
 	protected Date dataNascimento;
+	protected TipoPessoa tipo;
 	
-	public Pessoa(String n, int cpf, int rg, char sexo, Date d) {
+	public Pessoa(String n, String cpf, int rg, char sexo, Date d) {
 		this.nome = n;
 		this.cpf = cpf;
 		this.rg = rg;
 		this.sexo = sexo;
 		this.dataNascimento = d;
+	}
+	public Pessoa(String nome) {
+		this.nome = nome;
 	}
 
 	public String getNome() {
@@ -26,11 +30,11 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -56,6 +60,14 @@ public abstract class Pessoa {
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	public TipoPessoa getTipo() {
+		return tipo;
+	}
+	
+	public void setTipo(TipoPessoa tipo) {
+		this.tipo = tipo;
 	}
 	
 	@Override

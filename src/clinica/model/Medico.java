@@ -1,4 +1,4 @@
-package clinica;
+package clinica.model;
 
 import java.util.Date;
 
@@ -7,7 +7,7 @@ public class Medico extends Funcionario {
 	private int numCrm;
 	private String especializacao;
 	
-	public Medico (String n, int cpf, int rg, char s, Date dataNasc, int id, double sal, Date dataIn, boolean ativo, int crm, String espec) {
+	public Medico (String n, String cpf, int rg, char s, Date dataNasc, int id, double sal, Date dataIn, boolean ativo, int crm, String espec) {
 		super(n, cpf, rg, s, dataNasc, id, sal, dataIn, ativo);
 		this.numCrm = crm;
 		this.especializacao = espec;

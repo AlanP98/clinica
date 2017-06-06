@@ -1,4 +1,4 @@
-package clinica;
+package clinica.model;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -38,5 +38,12 @@ public class Consulta extends Operacao {
 
 	public void setTriagem(Triagem triagem) {
 		this.triagem = triagem;
+	}
+
+	@Override
+	public String toString() {
+		return "Consulta [diagnostico=" + diagnostico + ", medicamentos=" + medicamentos + ", triagem=" + triagem
+				+ ", data=" + data + ", sala=" + sala + ", paciente=" + paciente + ", responsavel=" + responsavel + "]";
 	}	
+	
 }

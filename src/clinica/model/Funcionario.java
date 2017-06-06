@@ -1,4 +1,4 @@
-package clinica;
+package clinica.model;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ public class Funcionario extends Pessoa {
 	protected Date dataInicio;
 	protected boolean ativo;
 	
-	public Funcionario (String n, int cpf, int rg, char s, Date dataNasc, int id, double sal, Date dataIn, boolean ativo) {
+	public Funcionario (String n, String cpf, int rg, char s, Date dataNasc, int id, double sal, Date dataIn, boolean ativo) {
 		super(n, cpf, rg, s, dataNasc);
 		this.id = id;
 		this.salario = sal;

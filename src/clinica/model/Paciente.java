@@ -1,4 +1,4 @@
-package clinica;
+package clinica.model;
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ public class Paciente extends Pessoa {
 	private double altura;
 	private boolean ativo;
 
-	public Paciente (String n, int cpf, int rg, char s, Date dataNasc, int t, String end, Convenio conv, double p, double a, boolean ativo) {
+	public Paciente (String n, String cpf, int rg, char s, Date dataNasc, int t, String end, Convenio conv, double p, double a, boolean ativo) {
 		super(n, cpf, rg, s, dataNasc);
 		this.telefone = t;
 		this.endereco = end;
@@ -19,6 +19,10 @@ public class Paciente extends Pessoa {
 		this.peso = p;
 		this.altura = a;
 		this.ativo = ativo;	
+	}
+	
+	public Paciente(String nome) {
+		super(nome);
 	}
 
 	public int getTelefone() {
