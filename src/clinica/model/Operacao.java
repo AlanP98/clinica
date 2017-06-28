@@ -4,25 +4,34 @@ import java.util.Date;
 
 public abstract class Operacao {
 	
-	protected Date data;
+	protected int codigo;
+	protected Date dataHora;
 	protected Sala sala;
 	protected Paciente paciente;
 	protected Funcionario responsavel;
 	
-	public Operacao(Date data, Sala sala, Paciente paciente, Funcionario responsavel) {
-		super();
-		this.data = data;
+	public Operacao(int codigo, Date data, Sala sala, Paciente paciente, Funcionario responsavel) {
+		this.codigo = codigo;
+		this.dataHora = data;
 		this.sala = sala;
 		this.paciente = paciente;
 		this.responsavel = responsavel;
 	}
 
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int numero) {
+		this.codigo = numero;
+	}
+
 	public Date getData() {
-		return data;
+		return dataHora;
 	}
 
 	public void setData(Date data) {
-		this.data = data;
+		this.dataHora = data;
 	}
 
 	public Sala getSala() {

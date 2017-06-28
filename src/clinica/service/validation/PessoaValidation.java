@@ -1,64 +1,57 @@
 package clinica.service.validation;
 
 import clinica.exceptions.ValidationException;
-import clinica.model.*;
+import clinica.model.Pessoa;
 import clinica.service.PessoaService;
+import clinica.service.dao.PessoaServiceDAOSql;
 
 public class PessoaValidation implements PessoaService {
-	
-	private PessoaValidation() {
-		super();
-	}
-	
-	private static PessoaValidation service;
-	
-	public static PessoaValidation getInstance() {
-		if (PessoaValidation.service == null) {
-			PessoaValidation.service = new PessoaValidation(); 
-		}
-		return service;
-	}
-	
-	//private PessoaService service = new PessoaServiceDAOSql();
-	//private PessoaService service = new PessoaServiceDAOHibernate();
+	private PessoaService service = new PessoaServiceDAOSql();
 
-	@Override
 	public boolean save(Pessoa p) throws Exception {
-		boolean valid = p.getTipo().isValidCpfCnpj();
-		if (valid) {
-			System.out.println("Save ... cpf válido!");
+		if(!this.validateFields(p)) {
+			throw new ValidationException();
+		} else {
 			service.save(p);
 			return true;
+		}
+	}
+
+	@Override
+	public void update(Pessoa p) throws Exception {
+		if(!this.validateFields(p)) {
+			throw new ValidationException();
+		} else {
+			service.update(p);
+		}
+	}
+
+	@Override
+	public void delete(Pessoa p) throws Exception {
+		if(p.getCpf() == null){
+			throw new ValidationException();
+		} else if (p.isValidCpf()) {
+			service.delete(p);
 		} else {
 			throw new ValidationException();
 		}
 	}
 
 	@Override
-	public void update(Pessoa p) {
-		boolean valid = p.getTipo().isValidCpfCnpj();
-		if (valid) {
-			System.out.println("Update ... cpf válido!");
-			service.update(p);
+	public Pessoa searchByCpf(String cpf) throws Exception {
+		if(cpf == null){
+			throw new ValidationException();
 		} else {
-			System.out.println("Update ... cpf inválido!");
+			return service.searchByCpf(cpf);
 		}
 	}
-
-	@Override
-	public void delete(Pessoa p) {
-		service.delete(p);
-	}
-
-	@Override
-	public void deleteById(int id) {
-		service.deleteById(id);
-	}
-
-	@Override
-	public Pessoa searchByCpf(String cpf) {
-		// TODO Auto-generated method stub
-		return new Paciente("AP");
-	}
 	
+	public boolean validateFields(Pessoa p) {
+		if(!p.isValidCpf() || p.getNome() == null || p.getRg() == null || p.getSexo() == null || p.getDataNascimento() == null) {
+			System.out.println("Pessoa inválida");
+			return false;
+		} else {
+			return true;
+		}
+	}
 }

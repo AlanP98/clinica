@@ -2,14 +2,24 @@ package clinica.model;
 
 public class Convenio {
 
+	private int id;
 	private String nomeConvenio;
 	private String tipoConvenio;
 	private double mensalidade;
 	
-	public Convenio(String n, String tipo, double m){
+	public Convenio(int id, String n, String tipo, double m){
+		this.id = id;
 		this.nomeConvenio = n;
 		this.tipoConvenio = tipo;
 		this.mensalidade = m;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNomeConvenio() {

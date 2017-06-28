@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class Paciente extends Pessoa {
 	
-	private int telefone;
+	private String telefone;
 	private String endereco;
 	private Convenio convenio;
 	private double peso;
 	private double altura;
 	private boolean ativo;
 
-	public Paciente (String n, String cpf, int rg, char s, Date dataNasc, int t, String end, Convenio conv, double p, double a, boolean ativo) {
+	public Paciente (String n, String cpf, String rg, Sexo s, Date dataNasc, String t, String end, Convenio conv, double p, double a, boolean ativo) {
 		super(n, cpf, rg, s, dataNasc);
 		this.telefone = t;
 		this.endereco = end;
@@ -25,11 +25,11 @@ public class Paciente extends Pessoa {
 		super(nome);
 	}
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -71,6 +71,10 @@ public class Paciente extends Pessoa {
 
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
+	}
+	
+	public boolean isValidTelefone(){
+		return true;
 	}
 
 	@Override

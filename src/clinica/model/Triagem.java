@@ -8,8 +8,8 @@ public class Triagem extends Operacao {
 	private String pressaoArterial;
 	private int batimentosCardiacos;
 	
-	public Triagem(Date data, Sala sala, Paciente paciente, Funcionario responsavel, String sintomas, String pressao, int batimentos) {
-		super(data, sala, paciente, responsavel);
+	public Triagem(int numero, Date data, Sala sala, Paciente paciente, Funcionario responsavel, String sintomas, String pressao, int batimentos) {
+		super(numero, data, sala, paciente, responsavel);
 		this.sintomas = sintomas;
 		this.pressaoArterial = pressao;
 		this.batimentosCardiacos = batimentos;

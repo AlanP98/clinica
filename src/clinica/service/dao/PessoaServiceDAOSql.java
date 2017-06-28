@@ -1,34 +1,30 @@
 package clinica.service.dao;
 
-import clinica.model.Paciente;
 import clinica.model.Pessoa;
 import clinica.service.PessoaService;
 
 public class PessoaServiceDAOSql implements PessoaService {
 	@Override
 	public boolean save(Pessoa p) {
-		System.out.println("Save ..." + this.getClass().getName());
+		System.out.println("INSERT INTO pessoa (nome, cpf, rg, sexo, dataNascimento) "
+				+ "VALUES ('" + p.getNome() + "', '" + p.getCpf() + "', '" + p.getRg() + "', '" + p.getSexo() + "', '" + p.getDataNascimento() + "')");
 		return true;
 	}
 
 	@Override
 	public void update(Pessoa p) {
-		System.out.println("Update ..." + this.getClass().getName());
+		System.out.println("UPDATE pessoa SET nome = '" + p.getNome() + "', rg = '" + p.getRg() + "', sexo = '" + p.getSexo() + "', dataNascimento = '" + p.getDataNascimento() + "' WHERE cpf = '" + p.getCpf() + "'");
 	}
 
 	@Override
 	public void delete(Pessoa p) {
-		System.out.println("Delete... " + this.getClass().getName());
-	}
-
-	@Override
-	public void deleteById(int id) {
-		System.out.println("DeleteByID... " + this.getClass().getName());
+		System.out.println("DELETE FROM pessoa WHERE cpf = '" + p.getCpf() + "';");
 	}
 
 	@Override
 	public Pessoa searchByCpf(String cpf) {
-		return new Paciente("Name");
+		System.out.println("SELECT * FROM pessoa WHERE cpf = '" + cpf + "';");
+		return null;
 	}
 	
 }

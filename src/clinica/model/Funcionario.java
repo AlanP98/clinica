@@ -9,7 +9,7 @@ public class Funcionario extends Pessoa {
 	protected Date dataInicio;
 	protected boolean ativo;
 	
-	public Funcionario (String n, String cpf, int rg, char s, Date dataNasc, int id, double sal, Date dataIn, boolean ativo) {
+	public Funcionario (String n, String cpf, String rg, Sexo s, Date dataNasc, int id, double sal, Date dataIn, boolean ativo) {
 		super(n, cpf, rg, s, dataNasc);
 		this.id = id;
 		this.salario = sal;
@@ -48,6 +48,7 @@ public class Funcionario extends Pessoa {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
+	
 
 	@Override
 	public String toString() {

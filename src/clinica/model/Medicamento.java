@@ -2,13 +2,22 @@ package clinica.model;
 
 public class Medicamento {
 	
+	private int codigo;
 	private String nome;
 	private String compostos;
 	
-	public Medicamento(String nome, String compostos) {
-		super();
+	public Medicamento(int codigo, String nome, String compostos) {
+		this.codigo = codigo;
 		this.nome = nome;
 		this.compostos = compostos;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNome() {

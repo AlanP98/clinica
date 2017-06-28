@@ -6,11 +6,9 @@ public interface PessoaService {
 		
 		public boolean save(Pessoa p) throws Exception;
 		
-		public void update(Pessoa p);
+		public void update(Pessoa p) throws Exception;
 		
-		public void delete(Pessoa p);
-
-		public void deleteById(int id);
+		public void delete(Pessoa p) throws Exception;
 		
-		public Pessoa searchByCpf(String cpf);
+		public Pessoa searchByCpf(String cpf) throws Exception;
 }
